@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 
-
 app = FastAPI(
     title="SSM V4 API",
     description="Stock Safety Monitor V4 API",
