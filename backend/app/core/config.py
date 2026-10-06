@@ -57,6 +57,10 @@ class Settings(BaseSettings):
         alias="DATABASE_URL",
         min_length=1,
     )
+    krx_api_key: str | None = Field(
+        default=None,
+        alias="KRX_API_KEY",
+    )
 
     log_level: str = Field(
         default="INFO",
