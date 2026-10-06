@@ -1,9 +1,12 @@
 from fastapi import FastAPI
 
+from backend.app.core.config import settings
+
 app = FastAPI(
-    title="SSM V4 API",
-    description="Stock Safety Monitor V4 API",
-    version="0.1.0",
+    title=settings.app_name,
+    description="SSM V4 API",
+    version=settings.app_version,
+    debug=settings.debug,
 )
 
 
@@ -12,5 +15,6 @@ async def health_check() -> dict[str, str]:
     return {
         "status": "ok",
         "service": "ssm-v4-api",
-        "version": "0.1.0",
+        "version": settings.app_version,
+        "environment": settings.app_env.value,
     }
